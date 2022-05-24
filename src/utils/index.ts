@@ -1,16 +1,19 @@
 export enum collectionName {
   USERS = "users",
+  PROJECTS = "projects",
+  COLUMNS = "columns",
+  TASKS = "tasks",
 }
+
+export enum methodName {
+  GET = "GET",
+  POST = "POST",
+  PUT = "PUT",
+  DELETE = "DELETE",
+}
+
 export enum statusCode {
   OK = 200,
   UNAUTHORIZED = 401,
-  Forbidden = 403,
-}
-
-export class CustomError extends Error {
-  status: number;
-  constructor(message?: string | undefined, status?: number) {
-    super(message);
-    this.status = status || 404;
-  }
+  FORBIDDEN = 403,
 }
