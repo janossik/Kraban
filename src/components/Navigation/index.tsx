@@ -100,7 +100,7 @@ const Navigation = () => {
         <Button
           onClick={() => {
             if (clientAuth.currentUser) {
-              UserService.update(clientAuth.currentUser.uid, {
+              UserService.updateStatus(clientAuth.currentUser.uid, {
                 status: false,
               });
               clientAuth.signOut();

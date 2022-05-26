@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     #__next{
-      min-height: 100vh;
+      min-height: calc(100vh - 60px);
     }
 
     ::-webkit-scrollbar {

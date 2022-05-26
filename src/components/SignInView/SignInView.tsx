@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 60px);
 `;
 
 const SignInView = () => {
@@ -31,7 +31,8 @@ const SignInView = () => {
           email,
           password
         );
-        await UserService.update(user.uid, {
+
+        await UserService.updateStatus(user.uid, {
           status: true,
         });
       })

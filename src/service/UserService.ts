@@ -8,6 +8,7 @@ interface IUserService {
   create: (data: IUserForCreate) => Promise<IUserProps>;
   update: (id: string, data: IUserForUpdate) => Promise<IUserProps>;
   remove: (id: string) => Promise<void>;
+  updateStatus: (id: string, data: { status: boolean }) => Promise<IUserProps>;
 }
 
 const UserService: IUserService = {
@@ -22,6 +23,8 @@ const UserService: IUserService = {
     await queryWithAuthorization("put", `/api/admin/user/${id}`, null, data),
   remove: async (id: string) =>
     await queryWithAuthorization("delete", `/api/user/${id}`),
+  updateStatus: async (id: string, data: IUserForUpdate) =>
+    await queryWithAuthorization("put", `/api/user/${id}`, null, data),
 };
 
 export default UserService;
